@@ -9,6 +9,7 @@ A : 타입스크립트 타입은 컴파일 중에 확인되는 반면, 자바스
 ```
 
 ### 220923
+#### object
 모든 js 객체는 모두 객체 타입이지만 ts에서는 더 구체적인 객체도 있다
 
 ```typescript
@@ -38,3 +39,15 @@ const person: {
 
 console.log(person.name)
 ```
+
+#### array
+배열 타입은 유연할 수도, strict 할 수도 있다
+```typescript
+const person = {
+  name: 'Kim',
+  age: 30,
+  hobbies: ['Sports', 'Cooking']
+}
+```
+위와 같이 hobbies를 지정하면 문자열들로 이루어진 배열 타입 `string[]`으로 인식함<br/>
+자동으로 hobbies 내의 문자열들도 `string`타입으로 인식한다
