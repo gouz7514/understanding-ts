@@ -53,3 +53,48 @@ const person = {
 ```
 위와 같이 hobbies를 지정하면 문자열들로 이루어진 배열 타입 `string[]`으로 인식함<br/>
 자동으로 hobbies 내의 문자열들도 `string`타입으로 인식한다
+
+### 220924
+#### tuple
+길이와 타입이 고정된 배열
+
+```typescript
+const person : {
+  name: string
+  age: number
+  hobbies: string[]
+  role: [number, string]
+} = {
+  name: 'Kim',
+  age: 30,
+  hobbies: ['Sports', 'Cooking'],
+  role: [2, 'author']
+}
+```
+
+위와 같이 role 이라는 튜플을 정의해 명시적으로 첫번째는 number, 두번째는 string만 오도록 할 수 있다.<br/>
+but, push는 에러 컴파일 안됨
+
+#### enum
+열거형으로 이름이 있는 상수들의 집합을 정의할 수 있다
+```typescript
+// app.ts
+enum Role { ADMIN, READ_ONLY, AUTHOR }
+```
+
+```javascript
+// app.js
+var Role;
+(function (Role) {
+    Role[Role["ADMIN"] = 0] = "ADMIN";
+    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
+    Role[Role["AUTHOR"] = 2] = "AUTHOR";
+})(Role || (Role = {}));
+```
+
+시작 숫자를 0으로 시작하지 않으려는 경우 식별자에 등호 추가해서 가능
+```typescript
+enum Role { ADMIN = 5, READ_ONLY, AUTHOR }
+```
+
+이렇게 생성된 사용자 정의 enum을 참조해서 사용할 수 있다
