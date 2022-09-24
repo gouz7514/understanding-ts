@@ -26,7 +26,9 @@ console.log(person.name)
 이 내용은 자바스크립트 객체(key : value)가 아닌 타입스크립트가 추론한 **객체 타입**이다. 즉 key : type 쌍이다.
 
 ![typescript object 인식](https://user-images.githubusercontent.com/41367134/191870726-ce5c1f9b-2609-4bbd-9121-e8742c7ace29.png)
-위와 같이 person의 type에 object라는 타입을 인식시키면 타입스크립트는 어떠한 정보도 주지 않는 객체가 있다고 이해한다. 따라서, 존재하는 키값이지만 에러 발생<b/r/>
+
+위와 같이 person의 type에 object라는 타입을 인식시키면 타입스크립트는 어떠한 정보도 주지 않는 객체가 있다고 이해한다. 따라서, 존재하는 키값이지만 에러 발생
+
 객체에 대한 정보가 없으므로, 어떤 타입의 속성도 지원하지 않으므로 보다 구체적인 객체 타입을 지정해서 추론된 모든 것을 자동으로 입력하도록 지정해야 한다.
 ```typescript
 const person: {
