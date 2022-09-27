@@ -106,3 +106,21 @@ enum Role { ADMIN = 5, READ_ONLY, AUTHOR }
 #### union
 서로 다른 두 종류의 값을 사용해야 하는 경우 유니언 타입을 사용해 두 타입중 하나를 사용해도 괜찮다는 것을 알릴 수 있다<br/>
 but, 타입스크립트는 유니언 타입만 이해할뿐 유니언 타입 내에 무엇이 있는지는 분석하지 못한다
+
+### 리터럴 타입
+[리터럴 타입 - Gitbook](https://typescript-kr.github.io/pages/literal-types.html)<br />
+유니언 타입의 구체적인 하위 타입
+
+```typescript
+// app.ts
+function combine(input1: number | string, input2: number | string, resultConversion: 'as-number' | 'as-text') { // resultConversion에 특정 문자열만 허용
+  let result
+  if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+    result = +input1 + +input2
+  } else {
+    result = input1.toString() + input2.toString()
+  }
+
+  return result
+}
+```
