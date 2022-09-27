@@ -124,3 +124,6 @@ function combine(input1: number | string, input2: number | string, resultConvers
   return result
 }
 ```
+
+### 타입 알리어스
+복잡한 타입 정의나 원하는 타입 이름을 새롭게 정의해놓고 코드 어디서나 사용 가능
