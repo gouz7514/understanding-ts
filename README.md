@@ -127,3 +127,17 @@ function combine(input1: number | string, input2: number | string, resultConvers
 
 ### 타입 알리어스
 복잡한 타입 정의나 원하는 타입 이름을 새롭게 정의해놓고 코드 어디서나 사용 가능
+
+### 220929
+undefined와 void는 명확하게 구분해야 한다.<br/>
+undefined는 하나의 유효한 타입<br/>
+함수가 아무것도 반환하지 않는다면 void를 사용해야 한다
+
+```typescript
+// 아무것도 반환하지 않는 함수
+function printResult(num: number) {
+  console.log('Result : ' + num)
+}
+```
+
+값을 반환하지 않는 함수를 사용하는 경우에는 void를 표준으로 사용하며, void를 명시적으로 지정할 수 있지만 타입스크립트는 이 코드를 추론할 수 있다
