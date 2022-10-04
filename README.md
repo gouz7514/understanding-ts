@@ -153,3 +153,17 @@ function add(n1: number, n2: number) {
 // 이렇게 combineValues라는 변수가 2개의 number 파라미터를 받아 number를 반환하는 함수임을 나타낸다
 let combineValues: (a: number, b: number) => number
 ```
+
+#### 콜백
+```typescript
+function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
+  const result = n1 + n2
+  cb(result)
+}
+
+addAndHandle(10, 20, (result) => {
+  console.log(result)
+})
+```
+
+callback 타입에 void를 지정함으로써 기본적으로 여기서 반환할 수 있는 모든 결과를 무시한다. 즉, callback 함수가 return 타입으로 아무 작업도 수행하지 않을 것이라고 입력
