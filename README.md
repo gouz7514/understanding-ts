@@ -172,3 +172,13 @@ callback 타입에 void를 지정함으로써 기본적으로 여기서 반환�
 - 추가적인 검사를 통해 어떤 작업을 수행할지 명시할 수 있다.
 - any의 문제점을 보완할 수 있다.
 - 할 수 없는 작업을 알 수 있또록 타임 검사를 수행할 수 있다.
+
+#### never
+항상 오류를 출력하거나 리턴 값을 내보내지 않음<br/>
+아무것도 반환하지 않는 것이 아닌 never를 반환하며 반환 값을 생성하지 않는다
+
+```typescript
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code }
+}
+```
