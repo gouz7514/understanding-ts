@@ -141,3 +141,15 @@ function printResult(num: number) {
 ```
 
 값을 반환하지 않는 함수를 사용하는 경우에는 void를 표준으로 사용하며, void를 명시적으로 지정할 수 있지만 타입스크립트는 이 코드를 추론할 수 있다
+
+### 221004
+#### 함수 타입
+함수의 매개변수와 반환값에 관련된 함수를 설명하는 함수<br/>
+```typescript
+function add(n1: number, n2: number) {
+  return n1 + n2
+}
+
+// 이렇게 combineValues라는 변수가 2개의 number 파라미터를 받아 number를 반환하는 함수임을 나타낸다
+let combineValues: (a: number, b: number) => number
+```
