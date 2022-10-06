@@ -182,3 +182,12 @@ function generateError(message: string, code: number): never {
   throw { message: message, errorCode: code }
 }
 ```
+
+### 221006
+- `tsc` : 여러 파일을 한번에 컴파일
+- `tsc -w` : 여러 파일을 한번에 watch
+
+`tsconfig.json` 을 사용해 여러 컴파일 옵션을 설정할 수 있다 ([typescriptlang - tsconfig](https://www.typescriptlang.org/tsconfig))
+
+- `exclude` : 컴파일에서 제외
+- `include` : 컴파일에 포함
