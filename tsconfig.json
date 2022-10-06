@@ -102,9 +102,5 @@
   },
   "exclude": [
     "node_modules"
-  ],
-  "include": [
-    "app.ts",
-    "analytics.ts"
   ]
 }
