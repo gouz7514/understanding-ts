@@ -191,3 +191,10 @@ function generateError(message: string, code: number): never {
 
 - `exclude` : 컴파일에서 제외
 - `include` : 컴파일에 포함
+
+#### tsconfig 파보기
+- `lib` : dom으로 작업을 수행하는 항목들, 즉 기본 객체, 기능, 타입스크립트 노드를 지정하게 해주는 옵션
+
+> TypeScript includes a default set of type definitions for built-in JS APIs (like Math), as well as type definitions for things found in browser environments (like document). TypeScript also includes APIs for newer JS features matching the target you specify; for example the definition for Map is available if target is ES6 or newer.
+
+즉, lib 설정을 통해 JS 내 API 들에 대해서 접근 가능하다
