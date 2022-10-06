@@ -1,3 +1,4 @@
+"use strict";
 // const person: {
 //   name: string
 //   age: number
@@ -25,17 +26,16 @@ var Role;
     Role[Role["READ_ONLY"] = 6] = "READ_ONLY";
     Role[Role["AUTHOR"] = 7] = "AUTHOR";
 })(Role || (Role = {}));
-var person = {
+const person = {
     name: 'Kim',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
     role: Role.ADMIN
 };
-var favoriteActivites;
+let favoriteActivites;
 favoriteActivites = ['sports'];
 console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
+for (const hobby of person.hobbies) {
     console.log(hobby);
 }
 if (person.role === Role.ADMIN) {
