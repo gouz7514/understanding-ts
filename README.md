@@ -198,3 +198,7 @@ function generateError(message: string, code: number): never {
 > TypeScript includes a default set of type definitions for built-in JS APIs (like Math), as well as type definitions for things found in browser environments (like document). TypeScript also includes APIs for newer JS features matching the target you specify; for example the definition for Map is available if target is ES6 or newer.
 
 즉, lib 설정을 통해 JS 내 API 들에 대해서 접근 가능하다
+
+- `sourceMap` : true로 설정 시 `.js.map` 파일들이 생성된다. 이 파일들은 입력 파일에 자바스크립트 파일을 연결하는 최신 브라우저와 개발자 도구 간의 다리
+
+> Enables the generation of sourcemap files. These files allow debuggers and other tools to display the original TypeScript source code when actually working with the emitted JavaScript files. Source map files are emitted as .js.map (or .jsx.map) files next to the corresponding .js output file.
