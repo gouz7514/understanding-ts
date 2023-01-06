@@ -1,6 +1,5 @@
 # understanding-ts
 
-### 220922
 - 타입스크립트는 타입을 추론할 수 있다 ([정적 타이핑](https://poiemaweb.com/typescript-typing))
 - 타입스크립트 타입은 컴파일 중에 확인되는 반면, 자바스크립트 타입은 런타임 중에 확인된다
 ```
@@ -8,7 +7,6 @@ Q : 자바스크립트 타입 (예. typeof 'Max' => 'string')과 타입스크립
 A : 타입스크립트 타입은 컴파일 중에 확인되는 반면, 자바스크립트 타입은 런타임 중에 확인된다
 ```
 
-### 220923
 #### object
 모든 js 객체는 모두 객체 타입이지만 ts에서는 더 구체적인 객체도 있다
 
@@ -54,7 +52,6 @@ const person = {
 위와 같이 hobbies를 지정하면 문자열들로 이루어진 배열 타입 `string[]`으로 인식함<br/>
 자동으로 hobbies 내의 문자열들도 `string`타입으로 인식한다
 
-### 220924
 #### tuple
 길이와 타입이 고정된 배열
 
@@ -99,7 +96,6 @@ enum Role { ADMIN = 5, READ_ONLY, AUTHOR }
 
 이렇게 생성된 사용자 정의 enum을 참조해서 사용할 수 있다
 
-### 220927
 #### any
 어떤 값이 종류의 데이터가 어디에 저장될지 전혀 알 수 없는 경우에 대비하거나 런타임 검사를 수행하는 경우 런타임 도중 이처럼 특정 값에 수행하고자 하는 작업의 범위를 좁히기 위해 사용
 
@@ -128,7 +124,6 @@ function combine(input1: number | string, input2: number | string, resultConvers
 ### 타입 알리어스
 복잡한 타입 정의나 원하는 타입 이름을 새롭게 정의해놓고 코드 어디서나 사용 가능
 
-### 220929
 undefined와 void는 명확하게 구분해야 한다.<br/>
 undefined는 하나의 유효한 타입<br/>
 함수가 아무것도 반환하지 않는다면 void를 사용해야 한다
@@ -142,7 +137,6 @@ function printResult(num: number) {
 
 값을 반환하지 않는 함수를 사용하는 경우에는 void를 표준으로 사용하며, void를 명시적으로 지정할 수 있지만 타입스크립트는 이 코드를 추론할 수 있다
 
-### 221004
 #### 함수 타입
 함수의 매개변수와 반환값에 관련된 함수를 설명하는 함수<br/>
 ```typescript
@@ -183,7 +177,6 @@ function generateError(message: string, code: number): never {
 }
 ```
 
-### 221006
 - `tsc` : 여러 파일을 한번에 컴파일
 - `tsc -w` : 여러 파일을 한번에 watch
 
@@ -202,3 +195,7 @@ function generateError(message: string, code: number): never {
 - `sourceMap` : true로 설정 시 `.js.map` 파일들이 생성된다. 이 파일들은 입력 파일에 자바스크립트 파일을 연결하는 최신 브라우저와 개발자 도구 간의 다리
 
 > Enables the generation of sourcemap files. These files allow debuggers and other tools to display the original TypeScript source code when actually working with the emitted JavaScript files. Source map files are emitted as .js.map (or .jsx.map) files next to the corresponding .js output file.
+
+- `outDir` : 컴파일된 js 파일들이 저장되는 디렉토리를 지정할 수 있다. (output)
+- `rootDir` : 컴파일될 파일들의 경로 (input). 해당 디렉토리 구조를 그대로 복사한다.
+- `removeComments` : 컴파일 시 주석이 제거된다. 용량 줄일 때 도움될 수 있음
