@@ -227,3 +227,5 @@ sendAnalytics('The data')
 
 - `strictNullChecks` : true이면 요소가 null, undefined 타입일 경우 타입 에러 발생 가능
 - `strictBindCallApply` : call, bind, apply가 올바른 파라미터와 쓰이는지 체크
+- `noUnusedLocals`, `noUnusedParameters` : 사용하지 않은 지역 변수, 파라미터의 경우 warning 발생시킴
+- `noImplicitReturns` : 결과를 return하지 않는 함수가 존재하면 warning
