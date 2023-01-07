@@ -200,3 +200,30 @@ function generateError(message: string, code: number): never {
 - `rootDir` : 컴파일될 파일들의 경로 (input). 해당 디렉토리 구조를 그대로 복사한다.
 - `removeComments` : 컴파일 시 주석이 제거된다. 용량 줄일 때 도움될 수 있음
 - `noEmitOnError` : 에러 발생 시 자바스크립트로 컴파일하지 않는다
+- `noImplicitAny` : 타입 선언이 되어 있지 않으면 any로 fallback. 변수의 경우는 괜찮으나 함수의 경우는 에러 발생한다
+```typescript
+// noImplicitAny : false -> 에러 발생 x
+let logged
+
+function sendAnalytics(data) {
+  console.log(data)
+  logged = true
+}
+
+sendAnalytics('The data')
+```
+
+```typescript
+// noImpliCitAnhy : true -> 에러 발생
+let logged
+
+function sendAnalytics(data) { // 여기서 타입 선언이 되어 있지 않아 에러 발생
+  console.log(data)
+  logged = true
+}
+
+sendAnalytics('The data')
+```
+
+- `strictNullChecks` : true이면 요소가 null, undefined 타입일 경우 타입 에러 발생 가능
+- `strictBindCallApply` : call, bind, apply가 올바른 파라미터와 쓰이는지 체크
