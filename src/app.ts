@@ -5,4 +5,4 @@ function clickHandler(message: string) {
 }
 
 // comment
-button.addEventListener('click', clickHandler.bind(null))
+button.addEventListener('click', clickHandler.bind(null, "You're welcome!"))
