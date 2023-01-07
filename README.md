@@ -199,3 +199,4 @@ function generateError(message: string, code: number): never {
 - `outDir` : 컴파일된 js 파일들이 저장되는 디렉토리를 지정할 수 있다. (output)
 - `rootDir` : 컴파일될 파일들의 경로 (input). 해당 디렉토리 구조를 그대로 복사한다.
 - `removeComments` : 컴파일 시 주석이 제거된다. 용량 줄일 때 도움될 수 있음
+- `noEmitOnError` : 에러 발생 시 자바스크립트로 컴파일하지 않는다
