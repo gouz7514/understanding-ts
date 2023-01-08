@@ -267,3 +267,13 @@ const accounting = new Department('accounting')
 accounting.employees[0] = 'Kim' // 에러 발생
 ```
 위와 같이 선언하면 클래스 외부에서 employees 필드에 접근할 수 없다
+
+또한, 생성자 선언 부분을 축약해서 사용할 수 있다
+```typescript
+class Department {
+  // private id: string
+  // name: string
+  
+  constructor (private id: string, public name: string) {}
+}
+```
