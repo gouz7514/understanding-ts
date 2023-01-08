@@ -229,3 +229,22 @@ sendAnalytics('The data')
 - `strictBindCallApply` : call, bind, apply가 올바른 파라미터와 쓰이는지 체크
 - `noUnusedLocals`, `noUnusedParameters` : 사용하지 않은 지역 변수, 파라미터의 경우 warning 발생시킴
 - `noImplicitReturns` : 결과를 return하지 않는 함수가 존재하면 warning
+
+### class와 interface
+객체 지향 프로그래밍에서는 프로그램을 수많은 '객체(object)' 라는 단위로 나누고 사용한다. class는 object의 청사진이 되는 개념으로, 클래스를 사용해 객체의 형태, 포함해야 하는 데이터, 어떤 메소드가 필요한지 정의할 수 있다.
+
+즉, 객체는 클래스의 인스턴스이다.
+
+```typescript
+class Department {
+  name: string
+
+  constructor(n: string) {
+    this.name = n
+  }
+}
+
+const accounting = new Department('accounting')
+```
+
+생성자(constructor) 생성을 통해 클래스와 연결시키며 객체에 대한 초기화 작업을 수행할 수 있다.

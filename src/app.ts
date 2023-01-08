@@ -1,8 +1,21 @@
-const button = document.querySelector('button')!
+class Department {
+  name: string
 
-function clickHandler(message: string) {
-  console.log('clicked! ')
+  constructor(n: string) {
+    this.name = n
+  }
+
+  describe(this: Department) {
+    console.log('Depaartment : ' + this.name)
+  }
 }
 
-// comment
-button.addEventListener('click', clickHandler.bind(null, "You're welcome!"))
+const accounting = new Department('accounting')
+accounting.describe()
+
+const accountingCopy = {
+  name: 's',
+  describe: accounting.describe
+}
+
+accountingCopy.describe()
