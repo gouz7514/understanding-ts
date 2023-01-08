@@ -247,4 +247,23 @@ class Department {
 const accounting = new Department('accounting')
 ```
 
+#### 제어자
 생성자(constructor) 생성을 통해 클래스와 연결시키며 객체에 대한 초기화 작업을 수행할 수 있다.
+
+메소드를 통해 인스턴스의 데이터를 수정할 수 있는데 이 방식 외에 직접 수정을 방지해야 한다. 즉, 클래스 외부에서 필드에 접근하는 것을 허용해서는 안된다
+
+```typescript
+class Department {
+  name: string
+  private employees: string[] = []
+
+  constructor(n: string) {
+    this.name = n
+  }
+}
+
+
+const accounting = new Department('accounting')
+accounting.employees[0] = 'Kim' // 에러 발생
+```
+위와 같이 선언하면 클래스 외부에서 employees 필드에 접근할 수 없다
