@@ -301,3 +301,9 @@ class ITDepartment extends Department {
 
 - 기본 클래스의 메소드를 오버라이드할 수 있다
 - 속성에 대한 접근을 `protected` 로 지정해야 상속받은 클래스에서 접근할 수 있다
+
+#### 게터와 세터
+비공개로 설정할 필요가 있는 속성을 private로 설정한 후, 이 속성에 접근하여 값을 읽거나, 쓰기 위한 Getter, Setter 함수를 사용하여 속성을 정의할 수 있다.
+
+getter를 호출할 때는 메소드로서 호출 가능<br />
+setter를 호출할 때는 값처럼 접근 해야 함
