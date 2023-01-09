@@ -298,3 +298,6 @@ class ITDepartment extends Department {
 ```
 
 `super` 를 선언해 부모 클래스의 속성을 상속받은 뒤 다른 속성 할당 가능
+
+- 기본 클래스의 메소드를 오버라이드할 수 있다
+- 속성에 대한 접근을 `protected` 로 지정해야 상속받은 클래스에서 접근할 수 있다
