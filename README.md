@@ -277,3 +277,24 @@ class Department {
   constructor (private id: string, public name: string) {}
 }
 ```
+
+### 상속
+`extends` 키워드를 사용해서 상위 클래스를 상속, 새로운 클래스를 선언 가능<br />
+다른 클래스로부터 상속받는 클래스에 고유 생성자를 추가할 때마다 상속하는 클래스로 super를 추가하고 이를 함수처럼 실행해야 한다. 여기서 super는 기본 클래스의 생성자를 호출한다
+
+```typescript
+class Department {
+  constructor(private id: string, public name: string) {}
+}
+
+class ITDepartment extends Department {
+  admins: string[]
+  
+  constructor(id: string, admins: string[]) {
+    super(id, 'IT') // 여기서 super는 Department의 파라미터인 id, name을 취한다
+    this.admins = admins // 이후 다른 속성 할당 가능
+  }
+}
+```
+
+`super` 를 선언해 부모 클래스의 속성을 상속받은 뒤 다른 속성 할당 가능
