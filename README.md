@@ -307,3 +307,6 @@ class ITDepartment extends Department {
 
 getter를 호출할 때는 메소드로서 호출 가능<br />
 setter를 호출할 때는 값처럼 접근 해야 함
+
+#### static
+인스턴스와 분리되어 클래스 자체에 종속되어 있는 속성. 따라서, 클래스를 기반으로 생성된 인스턴스를 참조하는 this를 사용해서 static 속성에 접근할 수 없다
