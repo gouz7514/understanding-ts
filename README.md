@@ -342,3 +342,6 @@ class AccountingDepartment extends Department {
   }
 }
 ```
+
+#### 인터페이스
+객체의 구조를 정의하고 타입을 확인하는데 사용할 수 있다
