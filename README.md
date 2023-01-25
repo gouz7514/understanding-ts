@@ -320,3 +320,25 @@ setter를 호출할 때는 값처럼 접근 해야 함
 
 #### 싱글톤
 생성자 앞에 private을 사용해서 해당 클래스를 기반으로 정확히 하나의 인스턴스만 생성되도록 할 수 있다
+
+- Q : 더 이상 객체를 생성할 수 없는데 어떻게 내부로 접근할 수 있을까?
+- A : 정적 메소드를 통해 접근한다
+
+```typescript
+class AccountingDepartment extends Department {
+  // 클래스 자체에서 접근할 수 있는 static 필드이며, 클래스 내에서만 접근 가능한 private 필드이다
+  private static instance: AccountingDepartment
+
+  static getInstance() {
+    // this.instance를 사용하면 이 클래스 자체를 참조하므로 다른 모든 정적 속성에 접근할 수 있다.
+    // 이를 대체해 클래스 이름을 사용한다
+    if (AccountingDepartment.instance) {
+      // this를 사용해 클래스 자체에 접근할 수 있게 해준다.
+      // 정적이지 않은 메소드처럼 작업하려는 인스턴스에 접근할 수 있게 해주는 것과 다르다
+      return this.instance
+    }
+    this.instance = new AccountingDepartment('d2', [])
+    return this.instance
+  }
+}
+```
