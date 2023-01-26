@@ -363,3 +363,5 @@ interface Greetable extends Named {
   greet(phrase: string): void
 }
 ```
+
+함수 타입으로서 인터페이스를 사용할 수 있다. (타입 선언이 보편적이고 코드 양이 적다면 대안으로 활용 가능)
