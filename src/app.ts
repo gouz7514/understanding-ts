@@ -1,3 +1,14 @@
+// type Sumfn = (A: number, b: number) => number
+interface SumFn {
+  (A: number, b: number): number
+}
+
+let sum: SumFn
+
+sum = (n1: number, n2: number) => {
+  return n1 + n2
+}
+
 interface Named {
   readonly name: string
 }
