@@ -347,3 +347,19 @@ class AccountingDepartment extends Department {
 객체의 구조를 정의하고 타입을 확인하는데 사용할 수 있다<br />
 인터페이스 사용을 통해 인터페이스 타입을 기반으로 하는 다른 타입의 다른 클래스를 저장할 수 있다<br />
 또한, 인터페이스의 사용을 통해 특정 구조를 반드시 포함하도록 하고 확인할 수 있다.
+
+`readonly` 속성 지정을 통해 해당 속성을 한 번만 설정하고 이후에는 읽기 전용으로 설정해 변경할 수 없도록 할 수 있다.
+
+`extends` 를 사용해 인터페이스가 다른 인터페이스를 확장할 수 있다
+
+```typescript
+interface Named {
+  readonly name: string
+}
+
+// Greetable 인터페이스 내에 name을 선언할 필요 없다(모든 요소 입력 필요 X)
+// Greetable 인터페이스를 구현하는 클래스는 name, greet() 선언 필요
+interface Greetable extends Named {
+  greet(phrase: string): void
+}
+```
