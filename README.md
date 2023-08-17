@@ -12,3 +12,5 @@
 [03. typescript 컴파일러](src/docs/03_typescript_컴파일러.md)
 
 [05. 클래스 & 인터페이스](src/docs/05_클래스_인터페이스.md)
+
+[06. 고급 타입](src/docs/06_고급_타입.md)
