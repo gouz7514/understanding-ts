@@ -22,24 +22,24 @@
 // const READ_ONLY = 1
 // const AUTHOR = 2
 
-enum Role { ADMIN = 5, READ_ONLY, AUTHOR }
+// enum Role { ADMIN = 5, READ_ONLY, AUTHOR }
 
-const person = {
-  name: 'Kim',
-  age: 30,
-  hobbies: ['Sports', 'Cooking'],
-  role: Role.ADMIN
-}
+// const person = {
+//   name: 'Kim',
+//   age: 30,
+//   hobbies: ['Sports', 'Cooking'],
+//   role: Role.ADMIN
+// }
 
-let favoriteActivites: string[]
-favoriteActivites = ['sports']
+// let favoriteActivites: string[]
+// favoriteActivites = ['sports']
 
-console.log(person.name)
+// console.log(person.name)
 
-for(const hobby of person.hobbies) {
-  console.log(hobby)
-}
+// for(const hobby of person.hobbies) {
+//   console.log(hobby)
+// }
 
-if (person.role === Role.ADMIN) {
-  console.log('is admin')
-}
+// if (person.role === Role.ADMIN) {
+//   console.log('is admin')
+// }
