@@ -140,7 +140,7 @@ function PositiveNumber(target: any, propName: string) {
   }
 }
 
-function validate(obj: any) {
+function Validate(obj: any) {
   const objValidatorConfig = registeredValidators[obj.constructor.name]
   if (!objValidatorConfig) {
     return true
@@ -191,7 +191,7 @@ courseFor.addEventListener('submit', event => {
 
   const createdCourse = new Course(title, price)
 
-  // const [validTitle, validPrice] = validate(createdCourse) as [boolean, boolean]
+  // const [validTitle, validPrice] = Validate(createdCourse) as [boolean, boolean]
   // if (!validTitle) {
   //   alert('Invalid title, please try again!')
   //   return
@@ -200,7 +200,7 @@ courseFor.addEventListener('submit', event => {
   //   alert('Invalid price, please try again!')
   //   return
   // }
-  if (!validate(createdCourse)) {
+  if (!Validate(createdCourse)) {
     alert('Invalid input, please try again!')
     return
   }
