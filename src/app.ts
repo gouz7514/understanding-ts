@@ -161,7 +161,8 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements 
 
   @autobind
   dragStartHandler(event: DragEvent): void {
-    console.log('dragstart')
+    event.dataTransfer!.setData('text/plain', this.project.id)
+    event.dataTransfer!.effectAllowed = 'move'
   }
 
   // @autobind
@@ -182,12 +183,40 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements 
 }
 
 // ProjectList class
-class ProjectList extends Component<HTMLDivElement, HTMLElement> {
+class ProjectList extends Component<HTMLDivElement, HTMLElement> implements DragTarget {
   assignedProjects: Project[]
 
   constructor(private type: 'active' | 'finished') {
     super('project-list', 'app', false, `${type}-projects`)
     this.assignedProjects = []
+
+    this.configure()
+    this.renderContent()
+  }
+
+  @autobind
+  dragOverHandler(event: DragEvent): void {
+    if (event.dataTransfer && event.dataTransfer.types[0] === 'text/plain') {
+      event.preventDefault()
+      const listEl = this.element.querySelector('ul')!
+      listEl.classList.add('droppable')
+    }
+  }
+
+  dropHandler(event: DragEvent): void {
+    console.log(event.dataTransfer!.getData('text/plain'))
+  }
+
+  @autobind
+  dragLeaveHandler(_: DragEvent): void {
+    const listEl = this.element.querySelector('ul')!
+    listEl.classList.remove('droppable')
+  }
+
+  configure() {
+    this.element.addEventListener('dragover', this.dragOverHandler)
+    this.element.addEventListener('drop', this.dropHandler)
+    this.element.addEventListener('dragleave', this.dragLeaveHandler)
 
     projectState.addListener((projects: Project[]) => {
       const relevantProjects = projects.filter(project => {
@@ -200,12 +229,7 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
       this.assignedProjects = relevantProjects
       this.renderProjects()
     })
-
-    this.configure()
-    this.renderContent()
   }
-
-  configure() {}
 
   renderContent() {
     const listId = `${this.type}-projects-list`
